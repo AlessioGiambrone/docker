@@ -27,13 +27,17 @@ nvidia-docker run -v $PYTHONFILE_DIRECTORY:/opt/ -t cuda7-keras
 ```
 working in the current directory became, for example
 ```bash
-nvidia-docker run -v `pwd`:/opt/ -t cuda7-keras
+nvidia-docker run -v `pwd`:/opt/ -t giambrox/cuda7-keras
 ```
 It is convenient to define an alias in `.bashrc`, for example:
 ```bash
-echo alias keras=\'nvidia-docker run -v \`pwd\`:/opt/ -t cuda7-keras\'  >> ~/.bashrc
+echo alias keras=\'nvidia-docker run -v \`pwd\`:/opt/ -t giambrox/cuda7-keras\'  >> ~/.bashrc
 ```
 Then usage is simply:
 ```bash
 keras
 ```
+
+## Test
+
+Executing the code from [Testing Theano with GPU](http://deeplearning.net/software/theano/tutorial/using_gpu.html) from the host machine using CPU took 4s with an AMD Athlon II x2 270 CPU (using a single thread); 0.8s with the container using an Nvidia GeForce GT 630 mk.2 (384 cores).
