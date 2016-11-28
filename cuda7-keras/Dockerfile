@@ -14,11 +14,14 @@ RUN apt-get update && apt-get install -y \
 	python3-pip \
 	python3-nose \
 	python3-numpy \
-	python3-scipy
+	python3-scipy \
+	python3-pandas 
 # Set CUDA_ROOT
 ENV CUDA_ROOT /usr/local/cuda/bin
-# Install bleeding-edge Theano
-RUN pip3 install --upgrade --no-deps git+git://github.com/Theano/Theano.git
+# Decomment for install bleeding-edge Theano
+#RUN pip3 install --upgrade --no-deps git+git://github.com/Theano/Theano.git
+# Install Theano with pip
+RUN pip3 install theano
 # Install Keras
 RUN pip3 install keras
 # Set up .theanorc for CUDA

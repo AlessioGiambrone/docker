@@ -37,3 +37,8 @@ Then usage is simply:
 ```bash
 keras
 ```
+
+##Changelog
+
+- 1.1 added Panda library. Theano is installed via pip repository due to a problem in the git repo.
+- 1.0 first running version
