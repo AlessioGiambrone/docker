@@ -41,3 +41,8 @@ keras
 ## Test
 
 Executing the code from [Testing Theano with GPU](http://deeplearning.net/software/theano/tutorial/using_gpu.html) from the host machine using CPU took 4s with an AMD Athlon II x2 270 CPU (using a single thread); 0.8s with the container using an Nvidia GeForce GT 630 mk.2 (384 cores).
+
+##Changelog
+
+- 1.1 added Panda library. Theano is installed via pip repository due to a problem in the git repo.
+- 1.0 first running version
