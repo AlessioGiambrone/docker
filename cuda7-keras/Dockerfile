@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y \
 	python3-nose \
 	python3-numpy \
 	python3-scipy \
-	python3-pandas 
+	python3-pandas \
+	python3-h5py 
 # Set CUDA_ROOT
 ENV CUDA_ROOT /usr/local/cuda/bin
 # Decomment for install bleeding-edge Theano
