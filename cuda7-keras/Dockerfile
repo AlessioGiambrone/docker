@@ -30,5 +30,7 @@ RUN echo "[global]\ndevice=gpu\nfloatX=float32\noptimizer_including=cudnn\n[lib]
 # Set theano as Keras backend
 RUN mkdir /root/.keras && echo '{\n"image_dim_ordering": "th",\n"backend": "theano",\n"floatx": "float32",\n"epsilon": 1e-07\n}' > /root/.keras/keras.json
 # Set the init script; it moves to root directory and executes "python main.py"
-RUN echo "#!/bin/bash\n\ncd /opt\npython3 main.py\n" > /root/init_script.sh
-ENTRYPOINT ["sh","/root/init_script.sh"]
+#RUN echo "#!/bin/bash\n\ncd /opt\necho $@\npython3 $1\n" > /root/init_script.sh
+#RUN echo "#!/bin/bash\n\ncd /opt" > /root/init_script.sh
+#ENTRYPOINT ["sh","/root/init_script.sh"]
+WORKDIR /opt/
